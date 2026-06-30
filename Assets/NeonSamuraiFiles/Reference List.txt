@@ -1,0 +1,87 @@
+Reference List:
+
+--Code used:
+
+NewTrix. (2022, May 10). Smooth Movement Controls In JavaScript/HTML (using ctx and canvas) [Video]. Youtube. https://www.youtube.com/watch?v=kX18GQurDQg&t=734s
+
+--Audio used:
+n.a. (2026, March 10). 337049__shinephoenixstormcrow__320655__rhodesmas__level-up-01 [Sound Effect]. Audio. https://audio.com/35bokord/audio/337049-shinephoenixstormcrow-320655-rhodesmas-level-up-01
+
+--AI used:
+OpenAI. (2026). ChatGPT (GPT-5) [Large Language Model].
+
+--Promt:
+Is there a way to freeze everything in javaScript like in unity
+
+--Response:
+Not exactly like Time.timeScale = 0 in Unity, because JavaScript doesn’t have a built-in global game time system.
+But you can create the same effect with a game state variable.
+
+Best Method: Pause Boolean
+let paused = false;
+Then inside your game loop:
+function Update(){    if (paused)    {        requestAnimationFrame(Update);        return;    }    // game logic here    requestAnimationFrame(Update);}
+
+Freeze the Game
+paused = true;
+
+Unfreeze
+paused = false;
+
+Why This Works
+Your:
+
+
+movement
+
+
+gravity
+
+
+collision
+
+
+updates
+
+
+all happen inside Update().
+If you stop running logic there:
+
+
+everything appears frozen
+
+
+
+Better Structure
+Instead of:
+setInterval(Gravity)
+put gravity INSIDE Update().
+Then pause freezes EVERYTHING consistently.
+
+Example
+let paused = false;function Update(){    if (!paused)    {        marginY += 4;        MoveObstacle();        Collide();    }    requestAnimationFrame(Update);}
+
+Toggle Pause With Keyboard
+addEventListener("keydown", function(e){    if (e.code == "Escape")    {        paused = !paused;    }});
+
+Important
+requestAnimationFrame() itself should usually KEEP RUNNING.
+You pause:
+
+
+logic
+NOT
+
+
+the render loop
+
+
+Otherwise restarting gets messy.
+
+Unity Equivalent
+UnityJavaScriptTime.timeScale = 0paused = trueUpdate()requestAnimationFrame()Physics freezestop movement logic
+
+Advanced Version
+Professional JS games often use:
+gameState = "menu"gameState = "playing"gameState = "paused"gameState = "gameover"
+instead of just a boolean.
