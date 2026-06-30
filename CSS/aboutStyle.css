@@ -1,0 +1,115 @@
+@font-face
+{
+    font-family: "magic_yellow";
+    src: url("../Assets/Fonts/magic_yellow/MagicYellow.otf") format("truetype");
+}
+
+@font-face
+{
+    font-family: "thingsFont";
+    src: url("../Assets/Fonts/things-font/Things-BF6a2b817bdb3b5.ttf") format("truetype");
+}
+
+body
+{
+    background-color: rgb(159, 98, 47);
+    /* overflow: hidden; */
+    margin: 0 auto;
+}
+
+.mainWrapper
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    /* background-color: rgba(0, 0, 0, 0.388); */
+}
+
+.nameTitleText
+{
+    position: absolute;
+    left: 6%;
+    top: 6%;
+
+    font-family: "magic_yellow", sans-serif;
+    font-size: xx-large;
+    
+    letter-spacing: -1px;
+
+    color :rgb(86, 55, 30);
+}
+
+.nameTitleIcon
+{
+    position: absolute;
+    
+    top: 5%;
+    left: 2.5%;
+}
+
+.homeButton,
+.aboutButton,
+.contactButton
+{
+    padding: 1.25vw;
+
+    margin-top: 20%;
+}
+
+.uiDivider
+{
+    position: absolute;
+    width: 100%;
+    height: .5vh;
+
+    top: 14vh;
+
+    background-color:rgb(86, 55, 30)
+}
+
+.aboutMeText
+{
+    font-family: "thingsFont", sans-serif;
+    color: rgb(255, 236, 236);
+}
+
+.backgroundPara
+{
+    font-family: sans-serif;
+    color: white;
+
+    max-width: 50%;
+}
+
+.educationText
+{
+    font-family: "thingsFont", sans-serif;
+    color: rgb(255, 236, 236);
+
+    margin-top: 5%;
+}
+
+.educationPara
+{
+    font-family: sans-serif;
+    color: white;
+
+    max-width: 50%;
+}
+
+.skillsText
+{
+    font-family: "thingsFont", sans-serif;
+    color: rgb(255, 236, 236);
+
+    margin-top: 5%;
+}
+
+.skillsPara
+{
+    font-family: sans-serif;
+    color: white;
+
+    max-width: 50%;
+}
